@@ -1,0 +1,80 @@
+<!doctype html>
+<html class="no-js" lang="">
+
+<head>
+  <meta charset="utf-8">
+  <title>Simple To Do</title>
+  <meta name="description" content="Simple To Do List">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <link rel="manifest" href="site.webmanifest">
+  <link rel="apple-touch-icon" href="icon.png">
+  <!-- Place favicon.ico in the root directory -->
+
+  <link rel="stylesheet" href="css/normalize.css">
+  <link rel="stylesheet" href="css/main.css">
+  <link rel="stylesheet" href="css/stylesheet.css">
+
+  <meta name="theme-color" content="#fafafa">
+</head>
+
+<body>
+  <!--[if IE]>
+    <p class="browserupgrade">You are using an <strong>outdated</strong> browser. Please <a href="https://browsehappy.com/">upgrade your browser</a> to improve your experience and security.</p>
+  <![endif]-->
+
+  <!-- Add your site or application content here -->
+  <header>
+    <h1>Simple To Do List</h1>
+  </header>
+  <main>
+    <form id = "newTask" onsubmit="return newTask()">
+      <table id = "createTask">
+        <tr class = "inputText">
+          <td>
+            <input id="userInput" type="text" placeholder="Type a new task..." >
+          </td>
+          <td>
+            <input type="submit" id="addButton" value="Add">
+          </td>
+        </tr>
+        <tr>
+          <td colspan="2">Extra options: <input type="checkbox" id="extraOptions" onclick="showExtraOptions()"></td>
+        </tr>
+        <tr class="extraFields">
+          <td colspan="2">Deadline: <input type="time" name="time" id="time"> <input type="date" name="date" id="date"></td>
+        </tr>
+        <tr class="extraFields">
+          <td colspan="2">Priority:
+            <select name="Priority" id="priority">
+              <option value="High">High</option>
+              <option value="Medium">Medium</option>
+              <option value="Low">Low</option>
+            </select>
+          </td>
+        </tr>
+      </table>
+    </form>
+
+    <br>
+
+    <table id="userTasks" ondragover="onDragOver(event);" ondrop="onDrop(event, this);">
+    </table>
+
+  </main>
+  <footer>
+    <!-- Footer -->
+  </footer>
+  <script src="js/vendor/modernizr-3.7.1.min.js"></script>
+  <script src="js/plugins.js"></script>
+  <script src="js/main.js"></script>
+
+  <!-- Google Analytics: change UA-XXXXX-Y to be your site's ID. -->
+  <script>
+    window.ga = function () { ga.q.push(arguments) }; ga.q = []; ga.l = +new Date;
+    ga('create', 'UA-XXXXX-Y', 'auto'); ga('set','transport','beacon'); ga('send', 'pageview')
+  </script>
+  <script src="https://www.google-analytics.com/analytics.js" async></script>
+</body>
+
+</html>
